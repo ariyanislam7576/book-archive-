@@ -14,14 +14,14 @@ const url = `https://openlibrary.org/search.json?q=${searchText}`
 }
 const displayBook = books => {
   // console.log(books);
-  const p = document.getElementById('p')
+  const h5 = document.getElementById('h5')
  if (books.length === 0){
-   p.innerText = `give valid input`
-   p.style.color = 'red'
+   h5.innerText = `something went wrong`
+   h5.style.color = 'red'
  }
  else{
-  p.innerText = `result found ${books.length}`
-  p.style.color = 'black'
+  h5.innerText = `result found ${books.length}`
+  h5.style.color = 'black'
  }
     const searchResult = document.getElementById('search-result')
     searchResult.textContent = '';
