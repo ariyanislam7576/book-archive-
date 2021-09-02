@@ -1,4 +1,4 @@
-
+/*-------------------------load book-------------------------*/
 const loadBook = () => {
 const searchBox = document.getElementById('search-box')
 const searchText = searchBox.value;
@@ -8,13 +8,11 @@ const url = `https://openlibrary.org/search.json?q=${searchText}`
         .then(res => res.json())
         .then(data => displayBook(data.docs))
 
- 
-       
-
 }
+/*----------------------------display all book------------------*/
 const displayBook = books => {
-  // console.log(books);
   const h5 = document.getElementById('h5')
+  /*error handling*/
  if (books.length === 0){
    h5.innerText = `something went wrong`
    h5.style.color = 'red'
@@ -29,6 +27,7 @@ const displayBook = books => {
       let {cover_i} = book;
         const div = document.createElement('div')
         div.classList.add('col')
+        /*set inner*/
         div.innerHTML = `
         <div class="card h-100">
         <div class="card-body">
